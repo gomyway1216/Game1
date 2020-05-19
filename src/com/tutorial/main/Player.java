@@ -19,20 +19,17 @@ public class Player extends GameObject {
 		x += velX;
 		y += velY;
 		
+		x = Game.clamp(x, 0, Game.WIDTH - 37);
+		y = Game.clamp(y, 0, Game.HEIGHT - 60);
 	}
-
+	
 	@Override
 	public void render(Graphics g) {
 //		g.setColor(Color.white);
 		if(id == ID.Player) {
 			g.setColor(Color.white);
 		}
-		else if(id == ID.Player2) {
-			g.setColor(Color.blue);
-		}
+
 		g.fillRect(x, y, 32, 32);
 	}
-	
-	
-
 }
