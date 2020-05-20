@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d30e7c6a-c4f0-4eca-9225-c4445702dff4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/BasicEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/BasicEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/HUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/Handler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/ID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/Spawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/Spawn.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589840401325</updated>
-      <workItem from="1589840415565" duration="1092000" />
+      <workItem from="1589840415565" duration="1302000" />
     </task>
     <servers />
   </component>

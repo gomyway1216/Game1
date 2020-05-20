@@ -46,6 +46,7 @@ public class Trail extends GameObject {
 		return (AlphaComposite.getInstance(type, alpha));
 		
 	}
+	
 	public Rectangle getBounds() {
 		return null;
 	}
