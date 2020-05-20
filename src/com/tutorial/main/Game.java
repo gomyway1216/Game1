@@ -35,6 +35,10 @@ public class Game extends Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		this.addMouseListener(menu);
 		
+		AudioPlayer.load();
+		
+		AudioPlayer.getMusic("background_music").loop();
+		
 		new Window(WIDTH, HEIGHT, "Avoid enemies", this);
 		
 		spawner = new Spawn(handler, hud);

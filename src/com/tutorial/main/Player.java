@@ -40,6 +40,7 @@ public class Player extends GameObject {
 				// collision code
 				if(getBounds().intersects(tempObject.getBounds())) {
 					HUD.HEALTH -= 2;
+					AudioPlayer.getSound("hit").play();
 				}
 			}
 		}
