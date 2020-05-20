@@ -4,8 +4,9 @@
     <list default="true" id="d30e7c6a-c4f0-4eca-9225-c4445702dff4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/Handler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/ID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/Spawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/Spawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tutorial/main/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tutorial/main/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
