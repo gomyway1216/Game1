@@ -13,6 +13,13 @@ public class Game extends Canvas implements Runnable {
 	private Thread thread;
 	private boolean running = false;
 	
+	public static boolean paused = false;
+	// difficulty
+	public int diff = 0;
+	
+	// 0 = normal
+	// 1 = hard
+	
 	private Random r;
 	private Handler handler;
 	private HUD hud;
@@ -21,6 +28,7 @@ public class Game extends Canvas implements Runnable {
 	
 	public enum STATE {
 		Menu,
+		Select,
 		Help,
 		Game,
 		End
@@ -41,7 +49,7 @@ public class Game extends Canvas implements Runnable {
 		
 		new Window(WIDTH, HEIGHT, "Avoid enemies", this);
 		
-		spawner = new Spawn(handler, hud);
+		spawner = new Spawn(handler, hud, this);
 		r = new Random();
 		
 		if(gameState == STATE.Game) {
@@ -101,22 +109,24 @@ public class Game extends Canvas implements Runnable {
 	}
 	
 	private void tick() {
-		handler.tick();
 		if(gameState == STATE.Game) {
-			hud.tick();
-			spawner.tick();
-			
-			if(HUD.HEALTH <= 0) {
-				HUD.HEALTH = 100;
-				gameState = STATE.End;
-				handler.clearEnemies();
-				for(int i = 0; i < 20; i++) {
-					handler.addObject(new MenuParticle(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.MenuParticle, handler));
+			if(!paused) {
+				hud.tick();
+				spawner.tick();
+				handler.tick();
+				
+				if(HUD.HEALTH <= 0) {
+					HUD.HEALTH = 100;
+					gameState = STATE.End;
+					handler.clearEnemies();
+					for(int i = 0; i < 20; i++) {
+						handler.addObject(new MenuParticle(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.MenuParticle, handler));
+					}
 				}
 			}
-			
-		} else if(gameState == STATE.Menu || gameState == STATE.End){
+		} else if(gameState == STATE.Menu || gameState == STATE.End || gameState == STATE.Select){
 			menu.tick();
+			handler.tick();
 		}
 		
 	}
@@ -134,9 +144,14 @@ public class Game extends Canvas implements Runnable {
 		
 		handler.render(g);
 		
+		if(paused) {
+			g.setColor(Color.white);
+			g.drawString("PAUSED", 100, 100);
+		}
+		
 		if(gameState == STATE.Game) {
 			hud.render(g);
-		} else if(gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End){
+		} else if(gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End || gameState == STATE.Select){
 			menu.render(g);
 		}
 		

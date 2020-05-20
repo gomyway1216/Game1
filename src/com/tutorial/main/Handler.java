@@ -4,7 +4,11 @@ import java.awt.Graphics;
 import java.util.LinkedList;
 
 public class Handler {
-	LinkedList<GameObject> object = new LinkedList<>();
+	LinkedList<GameObject> object;
+	
+	public Handler() {
+		 object = new LinkedList<>();
+	}
 	
 	public void tick() {
 		for(int i = 0; i < object.size(); i++) {
