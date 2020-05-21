@@ -27,7 +27,7 @@ public class Player extends GameObject {
 		x = Game.clamp(x, 0, Game.WIDTH - 37);
 		y = Game.clamp(y, 0, Game.HEIGHT - 60);
 		
-		handler.addObject(new Trail(x, y, ID.Trail, Color.white, 32, 32, 0.05f, handler));
+//		handler.addObject(new Trail(x, y, ID.Trail, Color.white, 32, 32, 0.05f, handler));
 		
 		collision();
 	}
@@ -48,7 +48,9 @@ public class Player extends GameObject {
 	
 	@Override
 	public void render(Graphics g) {
-		g.setColor(Color.white);
-		g.fillRect((int)x, (int)y, 32, 32);
+//		g.setColor(Color.white);
+//		g.fillRect((int)x, (int)y, 32, 32);
+//		yourImage.getScaledInstance(newWidth, newHeight, Image.SCALE_DEFAULT)
+		g.drawImage(Game.playerImage, (int)x, (int)y, null);
 	}
 }

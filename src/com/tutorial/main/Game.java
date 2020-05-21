@@ -4,6 +4,7 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class Game extends Canvas implements Runnable {
@@ -36,6 +37,8 @@ public class Game extends Canvas implements Runnable {
 	
 	public static STATE gameState = STATE.Menu;
 	
+	public static BufferedImage playerImage;
+	
 	public Game() {
 		handler = new Handler();
 		hud = new HUD();
@@ -43,12 +46,15 @@ public class Game extends Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		this.addMouseListener(menu);
 		
+		BufferedImageLoader loader = new BufferedImageLoader();
+		playerImage = loader.loadImage("/Stickman1.png");
+		
 		AudioPlayer.load();
 		
 		AudioPlayer.getMusic("background_music").loop();
 		
 		new Window(WIDTH, HEIGHT, "Avoid enemies", this);
-		
+
 		spawner = new Spawn(handler, hud, this);
 		r = new Random();
 		
