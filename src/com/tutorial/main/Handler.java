@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 public class Handler {
 	LinkedList<GameObject> object;
+	public int speed = 5;
 	
 	public Handler() {
 		 object = new LinkedList<>();

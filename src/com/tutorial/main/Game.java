@@ -26,13 +26,15 @@ public class Game extends Canvas implements Runnable {
 	private HUD hud;
 	private Spawn spawner;
 	private Menu menu;
+	private Shop shop;
 	
 	public enum STATE {
 		Menu,
 		Select,
 		Help,
 		Game,
-		End
+		End,
+		Shop
 	};
 	
 	public static STATE gameState = STATE.Menu;
@@ -42,9 +44,11 @@ public class Game extends Canvas implements Runnable {
 	public Game() {
 		handler = new Handler();
 		hud = new HUD();
+		shop = new Shop(handler, hud);
 		menu = new Menu(this, handler, hud);
 		this.addKeyListener(new KeyInput(handler));
 		this.addMouseListener(menu);
+		this.addMouseListener(shop);
 		
 		BufferedImageLoader loader = new BufferedImageLoader();
 		playerImage = loader.loadImage("/Stickman1.png");
@@ -148,8 +152,6 @@ public class Game extends Canvas implements Runnable {
 		g.setColor(Color.black);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 		
-		handler.render(g);
-		
 		if(paused) {
 			g.setColor(Color.white);
 			g.drawString("PAUSED", 100, 100);
@@ -157,8 +159,12 @@ public class Game extends Canvas implements Runnable {
 		
 		if(gameState == STATE.Game) {
 			hud.render(g);
+			handler.render(g);
 		} else if(gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End || gameState == STATE.Select){
 			menu.render(g);
+			handler.render(g);
+		} else if(gameState == STATE.Shop) {
+			shop.render(g);
 		}
 		
 		g.dispose();
